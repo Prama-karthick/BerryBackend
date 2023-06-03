@@ -11,12 +11,12 @@ router.post("/login",asyncHandler(
     const {password}=req.body;
     const user=await UserModel.findOne({email:email,password:password});
     if(user){
-      console.log("done");
+
       user.online=true;
       res.send(user);
     }
     else{
-      console.log("invalid User");
+
            res.json({msg:-1});
     }
 }))
@@ -42,7 +42,7 @@ router.post("/register",asyncHandler(
       expiresIn:1200
     }
     const Ur=await UserModel.create(newuser);
-    console.log("Registered Successfully");
+
          res.send(Ur);
   }
 }))

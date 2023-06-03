@@ -8,7 +8,7 @@ import { User, UserModel } from "../models/userModel";
 
 router.post("/createcrew",asyncHandler(
     async(req:any,res:any)=>{
-        console.log(req.body.Members)
+
     const {crewname,Members}=req.body;
     var userfound;
     let count=0;
@@ -32,9 +32,7 @@ router.post("/createcrew",asyncHandler(
                 chats:['']
         }
         const Ur=await CrewModel.create(newcrew);
-        console.log(newcrew);
-      console.log("Created Successfully");
-      console.log(Ur);
+
            res.send(Ur);
     }
    
